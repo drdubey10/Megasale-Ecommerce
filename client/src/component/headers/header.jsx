@@ -8,7 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 
 const PremiumHeader = styled(AppBar)({
-    backgroundColor: "#FF2D00",
+    backgroundColor: "#dddddd",
     height: "60px",
 });
 const HeaderLogo = styled(Box)({

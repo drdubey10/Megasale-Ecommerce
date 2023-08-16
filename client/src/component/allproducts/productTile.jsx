@@ -6,11 +6,12 @@ import { Link } from "react-router-dom";
 const TileWraper = styled(Box)({
         background: 'white',
         border: "1px solid silver",
-        height: '250px',
-        width: '250px',
+        height: '350px',
+        width: '350px',
         margin: "50px 20px 50px 55px",
         borderRadius: "30px",
         boxShadow: "5px 10px 18px #888888",
+        padding : "10px",
 
 })
 const TittleWrapper = styled(Typography)({
@@ -33,7 +34,7 @@ function ProductTile({ products }) {
 
             <TileWraper onMouseEnter={hovOn} onMouseLeave ={hovOff}>
                 <Box>
-                    <img style={{ height: '150px', width: '150px', borderRadius: '10px', paddingTop: "15px", transform: open ? 'scale(1.2,1.2)' : 'none', paddingTop: open? '40px': '15px'}} src={products.url} alt="productimage"></img>
+                    <img style={{ height: '150px', width: '150px', borderRadius: '10px', padding: "15px", transform: open ? 'scale(1.2,1.2)' : 'none', paddingTop: open? '40px': '15px'}} src={products.url} alt="productimage"></img>
                 </Box>
                 <Box>
                     <TittleWrapper style={{display: open ? 'none' : ''}}>{products.title.shortTitle}</TittleWrapper>

@@ -8,17 +8,46 @@ import { addToCart } from "../../redux/actions/cartActions";
 import { payUsingPaytm } from "../../service/api";
 import { post } from "../../utils/paytm";
 
-const LeftContainer = styled(Box)({
+// const theme = createTheme({
+//     breakpoints: {
+//       values: {
+//         xs: 0,
+//         sm: 600,
+//         md: 960,
+//         lg: 1280,
+//         xl: 1920,
+//       },
+//     },
+//   });
+
+const LeftContainer = styled(Box)(({theme})=>({
     minWidth: '40%',
     padding: '40px 0 0 80px',
-})
-const Image = styled('img')({
-    padding: '15px'
-})
+    [theme.breakpoints.down('md')]:{
+    padding: '4px 10px 0 10px',
+
+    }
+
+}));
+
+
+const Image = styled('img')(({ theme }) => ({
+    // padding: '15px',
+    height: 'auto',
+    width: '100%',
+    [theme.breakpoints.down('md')]:{
+        height: '330px',
+        width: '330px',
+    }
+
+  }));
+
+
 const StyledButton = styled(Button)({
     width: '48%',
     height: '50px'
 })
+
 
 const ActionItems = ({ product }) => {
     const navigate = useNavigate();
@@ -54,7 +83,9 @@ const ActionItems = ({ product }) => {
                 width: '90%'
 
             }}>
-                <Image src={product.detailUrl} alt="product"></Image>
+
+            <Image src={product.detailUrl} alt="product"></Image>
+
             </Box>
             <StyledButton variant="contained" onClick={addItemToCart} style={{ marginRight: '10px', background: 'White', color: 'black' }}><ShoppingCartIcon /><strong>Add to Cart</strong></StyledButton>
             <StyledButton variant="contained" onClick={() => buyNow()} style={{ background: "#fb541b" }}><FlashOnIcon /><strong>Buy Now</strong></StyledButton>
