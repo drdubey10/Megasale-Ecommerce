@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 const TileWraper = styled(Box)({
         background: 'white',
         border: "1px solid silver",
-        height: '350px',
-        width: '350px',
-        margin: "50px 20px 50px 55px",
+        height: '280px',
+        width: '280px',
+        margin: "50px 20px 50px 50px",
         borderRadius: "30px",
         boxShadow: "5px 10px 18px #888888",
         padding : "10px",
